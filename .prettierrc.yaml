@@ -1,0 +1,8 @@
+singleQuote: true
+tabWidth: 2
+useTabs: false
+semi: false
+printWidth: 80
+trailingComma: 'es5' # or "none", "all"
+bracketSpacing: true
+arrowParens: 'always' # or "avoid"

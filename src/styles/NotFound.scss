@@ -1,0 +1,98 @@
+// NotFound.scss
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 64px); /* Adjust for navbar height */
+  position: relative;
+  text-align: center;
+  background-color: rgb(
+    var(--v-theme-background)
+  ); /* Use Vuetify theme background color */
+  color: rgb(
+    var(--v-theme-on-background)
+  ); /* Text color depending on the theme */
+}
+
+.not-found-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Background behind the content */
+  overflow: hidden; /* Hide overflow to prevent scroll */
+
+  /* Adding multiple shapes */
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15; /* More visible */
+  }
+
+  &::before {
+    width: 300px; /* Increased size for visibility */
+    height: 300px; /* Increased size for visibility */
+    background: rgba(0, 0, 0, 0.2); /* Black color */
+    top: 20%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    width: 400px; /* Increased size for visibility */
+    height: 400px; /* Increased size for visibility */
+    background: rgba(0, 0, 0, 0.2); /* Black color */
+    top: 50%;
+    left: 30%; /* Adjust position for visibility */
+    transform: translate(-50%, -50%);
+  }
+}
+
+.not-found-content {
+  position: relative;
+  z-index: 2; /* Ensure content is above the background */
+  background-color: rgb(
+    var(--v-theme-surface)
+  ); /* Card background color from Vuetify theme */
+  border-radius: 0.75rem; /* Increased radius for a sleeker look */
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for a modern feel */
+  max-width: 400px; /* Limit max width */
+  width: 90%; /* Make it responsive */
+
+  /* Dark mode adjustment */
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(
+      var(--v-theme-surface)
+    ); /* Use surface color for contrast */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+  }
+}
+
+.not-found-title {
+  font-size: 5rem; /* Big title */
+  margin-bottom: 1rem;
+  font-family: 'Space Mono', monospace; /* Modern font */
+  color: rgb(var(--v-theme-primary)); /* Primary color for the title */
+}
+
+.not-found-message {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: rgb(var(--v-theme-on-surface)); /* Text color on the card surface */
+}
+
+.not-found-link {
+  font-size: 1rem;
+  color: rgb(var(--v-theme-primary)); /* Link color from theme */
+  text-decoration: underline;
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgb(var(--v-theme-secondary)); /* Dark gray on hover */
+  }
+}

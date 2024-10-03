@@ -1,0 +1,34 @@
+// _global.scss
+
+.v-app-bar.v-toolbar {
+  backdrop-filter: blur(10px);
+  background-color: rgb(var(--v-theme-background) / 0.8) !important;
+}
+
+.v-app-bar-title {
+  font-family: 'Space Mono';
+}
+
+.v-app-bar .v-divider {
+  height: 16px;
+}
+
+.v-app-bar {
+  padding: 0 16px; /* Add some padding */
+}
+
+.v-app-bar-title {
+  font-size: 20px; /* Increase font size for better visibility */
+}
+
+.v-btn {
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.v-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08); /* Subtle hover effect */
+}
+
+.v-divider {
+  background-color: rgba(0, 0, 0, 0.2); /* Darker divider color */
+}

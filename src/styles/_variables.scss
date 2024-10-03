@@ -1,0 +1,7 @@
+// _variables.scss
+
+@use 'vuetify' with (
+  $body-font-family: 'Instrument Sans'
+);
+
+$border-radius: 0.5rem;

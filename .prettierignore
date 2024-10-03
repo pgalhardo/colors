@@ -1,0 +1,25 @@
+# Ignore all node_modules
+node_modules/
+
+# Ignore build output directories
+dist/
+build/
+coverage/
+storybook-static/
+
+# Ignore configuration files
+*.config.js
+*.config.ts
+*.json
+*.yaml
+*.yml
+
+# Ignore specific files
+src/some-folder/legacy-file.js
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore markdown files
+*.md
