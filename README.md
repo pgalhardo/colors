@@ -3,31 +3,42 @@
 A user-friendly tool designed to simplify the process of creating beautiful tonal palettes.
 Generate tonal palettes and highlight colors based on your brand color, all powered by Google's HCT Color Space.
 
+## Preview
+
+Check out how the tool looks in both light and dark modes:
+
+### Light Mode
+
+![Light Mode Preview](./assets/light-mode-screenshot.png)
+
+### Dark Mode
+
+![Dark Mode Preview](./assets/dark-mode-screenshot.png)
+
 ## Features
 
 - **Ease of Use**: Input your brand color and get instant color palettes with a harmonized look.
-
 - **Copy to Clipboard**: Quickly copy the generated color values to your clipboard for easy use in your design tools.
 
 ## Getting Started
 
 1. Clone this repository:
 
-```bash
-git clone https://github.com/pgalhardo/colors.git
-```
+    ```bash
+    git clone https://github.com/pgalhardo/colors.git
+    ```
 
 2. Navigate to the project directory:
 
-```bash
-cd colors
-```
+    ```bash
+    cd colors
+    ```
 
 3. Install dependencies using Yarn:
 
-```bash
-yarn install
-```
+    ```bash
+    yarn install
+    ```
 
 4. Open your browser and visit [http://localhost:3000](http://localhost:3000).
 
