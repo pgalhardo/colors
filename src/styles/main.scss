@@ -1,7 +1,5 @@
-// main.scss
-
-@import './variables';
-@import './global';
-@import './components/v-color';
-@import './components/v-tonal-palette';
-@import './NotFound.scss';
+@forward './variables';
+@forward './global';
+@forward './components/v-color';
+@forward './components/v-tonal-palette';
+@forward './NotFound.scss';

@@ -34,10 +34,10 @@ Check out how the tool looks in both light and dark modes:
     cd colors
     ```
 
-3. Install dependencies using Yarn:
+3. Install dependencies using PNPM:
 
     ```bash
-    yarn install
+    pnpm install
     ```
 
 4. Open your browser and visit [http://localhost:3000](http://localhost:3000).

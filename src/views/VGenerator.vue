@@ -4,8 +4,8 @@
       <v-col md="4" sm="2" cols="12" />
       <v-col md="4" sm="8" cols="12">
         <v-text-field
-          v-model="primaryColor"
           ref="input"
+          v-model="primaryColor"
           rounded
           class="main-input"
           variant="solo"
@@ -20,8 +20,8 @@
             <v-btn
               variant="outlined"
               density="comfortable"
-              @click="generate"
               icon="mdi-arrow-left-bottom"
+              @click="generate"
             />
           </template>
         </v-text-field>
@@ -61,7 +61,6 @@ import { useI18n } from 'vue-i18n'
 
 // Types
 import type { Color } from '@/types/palette'
-import type { VTextField } from 'vuetify/lib/components/VTextField/index.mjs'
 
 // Utils
 import { isValidColor } from '@/utils'
@@ -70,7 +69,7 @@ import {
   themeFromSourceColor,
   tonesOfPalette,
 } from '@/utils/hct'
-import { computed, ref } from 'vue'
+import { computed, ref, useTemplateRef } from 'vue'
 
 // i18n
 const { t } = useI18n()
@@ -94,10 +93,10 @@ const palettes = ref<Palette[]>([])
 const highlight = ref<Color | undefined>(undefined)
 
 // Template refs
-const input = ref<InstanceType<typeof VTextField> | null>(null)
+const inputRef = useTemplateRef('input')
 
 async function generate() {
-  const isValid = await input.value?.validate()
+  const isValid = await inputRef.value?.validate()
 
   if (isValid) {
     generatePalette(primaryColor.value)
