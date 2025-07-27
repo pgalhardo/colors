@@ -1,4 +1,5 @@
 export default {
+  appTitle: 'pgalhardo/colors',
   copy: 'Copy color value',
   copied: 'Copied!',
   highlight: 'Highlight',

@@ -2,10 +2,10 @@
   <v-app>
     <v-app-bar flat color="background" elevate-on-scroll>
       <template #prepend>
-        <v-icon>mdi-palette</v-icon>
+        <v-icon icon="mdi-palette"></v-icon>
       </template>
 
-      <v-app-bar-title>pgalhardo/colors</v-app-bar-title>
+      <v-app-bar-title>{{ t('appTitle') }}</v-app-bar-title>
       <template #append>
         <v-btn
           icon="mdi-github"
@@ -17,14 +17,14 @@
 
         <v-divider vertical inset class="mx-2 my-auto" />
 
-        <v-btn :icon="themeIcon" @click="toggleTheme" class="mx-2" />
+        <v-btn :icon="themeIcon" class="mx-2" @click="toggleTheme" />
 
         <v-divider vertical inset class="mx-2 my-auto" />
 
         <v-menu offset-y>
           <template #activator="{ props }">
             <v-btn icon v-bind="props" class="mx-2 my-auto">
-              <v-icon>mdi-translate</v-icon>
+              <v-icon icon="mdi-translate"></v-icon>
             </v-btn>
           </template>
           <v-list
@@ -61,7 +61,7 @@ import { computed, watch } from 'vue'
 
 const appStore = useAppStore()
 const theme = useTheme()
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 // Computed property for theme icon based on the current theme
 const themeIcon = computed(() => {

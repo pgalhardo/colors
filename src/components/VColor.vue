@@ -2,13 +2,13 @@
   <div
     class="color"
     :style="{ 'background-color': props.value }"
-    @mouseenter="showHex"
-    @mouseleave="hideHex"
     role="button"
     tabindex="0"
+    :aria-label="copyButtonAriaLabel"
+    @mouseenter="showHex"
+    @mouseleave="hideHex"
     @keypress.enter="copyValue"
     @keypress.space="copyValue"
-    :aria-label="copyButtonAriaLabel"
   >
     <span class="color-hex" :style="{ color: props.on }">
       {{ displayValue }}
@@ -19,8 +19,8 @@
       :size="16"
       icon="mdi-content-copy"
       class="ml-auto mr-1"
-      @click="copyValue"
       :aria-label="copyButtonAriaLabel"
+      @click="copyValue"
     >
       <v-icon
         :size="12"
@@ -63,8 +63,8 @@ const copyButtonAriaLabel = computed(() =>
 /**
  * Copies the color value to the clipboard and gives feedback.
  */
-function copyValue(): void {
-  copyToClipboard(props.value)
+async function copyValue(): Promise<void> {
+  await copyToClipboard(props.value)
   resetCopyState()
 }
 
