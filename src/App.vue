@@ -104,7 +104,7 @@ function changeLocale(newLocale: string): void {
 // Watch for theme changes and update Vuetify theme
 watch(
   () => appStore.theme,
-  (newTheme) => (theme.global.name.value = newTheme),
+  (newTheme) => theme.change(newTheme),
   { immediate: true }
 )
 
