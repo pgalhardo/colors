@@ -1,24 +1,7 @@
 import { HUE_TONES } from './hct'
 
+import type { HSL, RGB } from '@/types/color'
 import type { Color } from '@/types/palette'
-
-/**
- * Represents a color in RGB space.
- */
-export type RGB = {
-  r: number
-  g: number
-  b: number
-}
-
-/**
- * Represents a color in HSL space.
- */
-export type HSL = {
-  h: number
-  s: number
-  l: number
-}
 
 export function isValidColor(potentialColor: string): boolean {
   return /^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(potentialColor)

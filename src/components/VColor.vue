@@ -1,42 +1,11 @@
-<template>
-  <div
-    class="color"
-    :style="{ 'background-color': props.value }"
-    role="button"
-    tabindex="0"
-    :aria-label="copyButtonAriaLabel"
-    @mouseenter="showHex"
-    @mouseleave="hideHex"
-    @keypress.enter="copyValue"
-    @keypress.space="copyValue"
-  >
-    <span class="color-hex" :style="{ color: props.on }">
-      {{ displayValue }}
-    </span>
-    <v-btn
-      variant="plain"
-      :color="props.on"
-      :size="16"
-      icon="mdi-content-copy"
-      class="ml-auto mr-1"
-      :aria-label="copyButtonAriaLabel"
-      @click="copyValue"
-    >
-      <v-icon
-        :size="12"
-        :icon="state.copied ? 'mdi-check' : 'mdi-content-copy'"
-        :color="props.on"
-      />
-    </v-btn>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { reactive, computed } from 'vue'
 import { Color } from '@/types/palette'
 import { useI18n } from 'vue-i18n'
 
-const props = defineProps<Color>()
+type Props = Color
+
+const props = defineProps<Props>()
 
 const { t } = useI18n()
 
@@ -117,3 +86,57 @@ function hideHex(): void {
   state.hex = false
 }
 </script>
+
+<template>
+  <div
+    class="color"
+    :style="{ 'background-color': props.value }"
+    role="button"
+    tabindex="0"
+    :aria-label="copyButtonAriaLabel"
+    @mouseenter="showHex"
+    @mouseleave="hideHex"
+    @keypress.enter="copyValue"
+    @keypress.space="copyValue"
+  >
+    <span
+      class="color-hex"
+      :style="{ color: props.on }"
+    >
+      {{ displayValue }}
+    </span>
+    <v-btn
+      variant="plain"
+      :color="props.on"
+      :size="16"
+      icon="mdi-content-copy"
+      class="ml-auto mr-1"
+      :aria-label="copyButtonAriaLabel"
+      @click="copyValue"
+    >
+      <v-icon
+        :size="12"
+        :icon="state.copied ? 'mdi-check' : 'mdi-content-copy'"
+        :color="props.on"
+      />
+    </v-btn>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.color {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 200px;
+  height: 1.725rem;
+  transition: all 0.4s;
+}
+
+.color-hex {
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 0.725rem;
+}
+</style>

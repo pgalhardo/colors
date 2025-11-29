@@ -9,11 +9,11 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import('@/views/VGenerator.vue'), // Main generator view
+    component: () => import('@/views/Workspace.vue'),
   },
   {
     path: '/:catchAll(.*)', // Catch-all route for handling undefined paths
-    component: () => import('@/views/NotFound.vue'), // Optional: Not found component
+    component: () => import('@/views/NotFound.vue'),
   },
 ]
 

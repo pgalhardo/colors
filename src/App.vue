@@ -1,50 +1,3 @@
-<template>
-  <v-app>
-    <v-app-bar flat color="background" elevate-on-scroll>
-      <template #prepend>
-        <v-icon icon="mdi-palette"></v-icon>
-      </template>
-
-      <v-app-bar-title>{{ t('appTitle') }}</v-app-bar-title>
-      <template #append>
-        <v-btn
-          icon="mdi-github"
-          href="https://github.com/pgalhardo/colors"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mx-2"
-        />
-
-        <v-divider vertical inset class="mx-2 my-auto" />
-
-        <v-btn :icon="themeIcon" class="mx-2" @click="toggleTheme" />
-
-        <v-divider vertical inset class="mx-2 my-auto" />
-
-        <v-menu offset-y>
-          <template #activator="{ props }">
-            <v-btn icon v-bind="props" class="mx-2 my-auto">
-              <v-icon icon="mdi-translate"></v-icon>
-            </v-btn>
-          </template>
-          <v-list
-            :items="languages"
-            item-value="code"
-            item-title="name"
-            :selected="[appStore.locale]"
-            @click:select="onLocaleSelect"
-          >
-          </v-list>
-        </v-menu>
-      </template>
-    </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
-</template>
-
 <script setup lang="ts">
 // Composables
 import { useTheme } from 'vuetify'
@@ -61,7 +14,7 @@ import { computed, watch } from 'vue'
 
 const appStore = useAppStore()
 const theme = useTheme()
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 // Computed property for theme icon based on the current theme
 const themeIcon = computed(() => {
@@ -115,3 +68,70 @@ watch(
   { immediate: true }
 )
 </script>
+
+<template>
+  <v-app>
+    <v-app-bar
+      flat
+      color="background"
+      elevate-on-scroll
+    >
+      <template #prepend>
+        <v-icon icon="mdi-palette"></v-icon>
+      </template>
+
+      <v-app-bar-title>{{ $t('appTitle') }}</v-app-bar-title>
+      <template #append>
+        <v-btn
+          icon="mdi-github"
+          href="https://github.com/pgalhardo/colors"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mx-2"
+        />
+
+        <v-divider
+          vertical
+          inset
+          class="mx-2 my-auto"
+        />
+
+        <v-btn
+          :icon="themeIcon"
+          class="mx-2"
+          @click="toggleTheme"
+        />
+
+        <v-divider
+          vertical
+          inset
+          class="mx-2 my-auto"
+        />
+
+        <v-menu offset-y>
+          <template #activator="{ props }">
+            <v-btn
+              icon
+              v-bind="props"
+              class="mx-2 my-auto"
+            >
+              <v-icon icon="mdi-translate"></v-icon>
+            </v-btn>
+          </template>
+          <v-list
+            :items="languages"
+            item-value="code"
+            item-title="name"
+            :selected="[appStore.locale]"
+            @click:select="onLocaleSelect"
+          >
+          </v-list>
+        </v-menu>
+      </template>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
+</template>

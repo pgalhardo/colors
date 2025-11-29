@@ -1,59 +1,3 @@
-<template>
-  <v-container fluid>
-    <v-row no-gutters>
-      <v-col md="4" sm="2" cols="12" />
-      <v-col md="4" sm="8" cols="12">
-        <v-text-field
-          ref="input"
-          v-model="primaryColor"
-          rounded
-          class="main-input"
-          variant="solo"
-          theme="dark"
-          :label="t('colorInput.label')"
-          placeholder="#018BD2"
-          validate-on="submit"
-          :rules="[rules.required, rules.valid]"
-          @keydown.enter="generate"
-        >
-          <template #append-inner>
-            <v-btn
-              variant="outlined"
-              density="comfortable"
-              icon="mdi-arrow-left-bottom"
-              @click="generate"
-            />
-          </template>
-        </v-text-field>
-      </v-col>
-      <v-col md="4" sm="2" cols="12" />
-    </v-row>
-    <div class="suggestions">
-      <v-row justify="center" dense>
-        <v-col
-          v-for="suggestion in suggestions"
-          :key="suggestion.value"
-          cols="auto"
-        >
-          <v-chip
-            :color="suggestion.value"
-            size="small"
-            append-icon="mdi-arrow-top-right"
-            @click="() => generatePalette(suggestion.value)"
-          >
-            {{ suggestion.name }}
-          </v-chip>
-        </v-col>
-      </v-row>
-    </div>
-    <v-theme
-      v-if="palettes.length && highlight"
-      :palettes="palettes"
-      :highlight="highlight"
-    />
-  </v-container>
-</template>
-
 <script setup lang="ts">
 // Components
 import VTheme from '@/components/VTheme.vue'
@@ -130,3 +74,86 @@ const rules = {
     !!isValidColor(value) || t('validation.invalidColor'),
 }
 </script>
+
+<template>
+  <v-container fluid>
+    <v-row no-gutters>
+      <v-col
+        md="4"
+        sm="2"
+        cols="12"
+      />
+      <v-col
+        md="4"
+        sm="8"
+        cols="12"
+      >
+        <v-text-field
+          ref="input"
+          v-model="primaryColor"
+          rounded
+          class="main-input"
+          variant="solo"
+          theme="dark"
+          :label="t('colorInput.label')"
+          placeholder="#018BD2"
+          validate-on="submit"
+          :rules="[rules.required, rules.valid]"
+          @keydown.enter="generate"
+        >
+          <template #append-inner>
+            <v-btn
+              variant="outlined"
+              density="comfortable"
+              icon="mdi-arrow-left-bottom"
+              @click="generate"
+            />
+          </template>
+        </v-text-field>
+      </v-col>
+      <v-col
+        md="4"
+        sm="2"
+        cols="12"
+      />
+    </v-row>
+    <div class="suggestions">
+      <v-row
+        justify="center"
+        dense
+      >
+        <v-col
+          v-for="suggestion in suggestions"
+          :key="suggestion.value"
+          cols="auto"
+        >
+          <v-chip
+            :color="suggestion.value"
+            size="small"
+            append-icon="mdi-arrow-top-right"
+            @click="() => generatePalette(suggestion.value)"
+          >
+            {{ suggestion.name }}
+          </v-chip>
+        </v-col>
+      </v-row>
+    </div>
+    <v-theme
+      v-if="palettes.length && highlight"
+      :palettes="palettes"
+      :highlight="highlight"
+    />
+  </v-container>
+</template>
+
+<style lang="scss" scoped>
+.main-input {
+  margin-top: 3rem;
+}
+
+.suggestions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+</style>

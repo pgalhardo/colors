@@ -44,7 +44,7 @@ export default defineConfigWithVueTs(
       'no-unused-vars': 'off',
       'prettier/prettier': 'error',
       'vue/block-lang': ['error', { script: { lang: 'ts' } }],
-      'vue/block-order': ['warn', { order: ['template', 'script', 'style'] }],
+      'vue/block-order': ['warn', { order: ['script', 'template', 'style'] }],
       'vue/component-api-style': ['error', ['script-setup']],
       'vue/custom-event-name-casing': [
         'warn',
@@ -68,7 +68,6 @@ export default defineConfigWithVueTs(
       'vue/no-empty-component-block': 'warn',
       'vue/no-multiple-objects-in-class': 'warn',
       'vue/no-ref-object-reactivity-loss': 'error',
-      'vue/no-restricted-block': ['error', { element: 'style' }],
       'vue/no-root-v-if': 'error',
       'vue/no-static-inline-styles': 'error',
       'vue/no-template-target-blank': 'error',
