@@ -3,14 +3,14 @@
 import pluginVue from 'eslint-plugin-vue'
 import {
   defineConfigWithVueTs,
-  vueTsConfigs,
+  vueTsConfigs
 } from '@vue/eslint-config-typescript'
 import prettierConfig from '@vue/eslint-config-prettier'
 
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
-    files: ['**/*.{js,ts,vue}'],
+    files: ['**/*.{js,ts,vue}']
   },
 
   {
@@ -20,8 +20,8 @@ export default defineConfigWithVueTs(
       '**/esm',
       '**/storybook-static',
       '**/coverage',
-      '**/shims.d.ts',
-    ],
+      '**/shims.d.ts'
+    ]
   },
 
   ...pluginVue.configs['flat/recommended'],
@@ -38,7 +38,7 @@ export default defineConfigWithVueTs(
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-unused-expressions': [
         'error',
-        { allowTernary: true },
+        { allowTernary: true }
       ],
       eqeqeq: 'error',
       'no-unused-vars': 'off',
@@ -50,13 +50,13 @@ export default defineConfigWithVueTs(
         'warn',
         'kebab-case',
         {
-          ignores: ['/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u'],
-        },
+          ignores: ['/^[a-z]+(?:-[a-z]+)*:[a-z]+(?:-[a-z]+)*$/u']
+        }
       ],
       'vue/define-emits-declaration': ['error', 'type-based'],
       'vue/define-macros-order': [
         'warn',
-        { order: ['defineProps', 'defineEmits'] },
+        { order: ['defineProps', 'defineEmits'] }
       ],
       'vue/define-props-declaration': ['error', 'type-based'],
       'vue/eqeqeq': 'error',
@@ -88,7 +88,7 @@ export default defineConfigWithVueTs(
       'vue/require-typed-ref': 'error',
       'vue/v-on-handler-style': 'error',
       'vue/valid-v-slot': ['error', { allowModifiers: true }],
-      'vue/no-v-html': 'off',
-    },
+      'vue/no-v-html': 'off'
+    }
   }
 )

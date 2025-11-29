@@ -1,24 +1,24 @@
 import {
   argbFromHex,
   hexFromArgb,
-  themeFromSourceColor as _themeFromSourceColor,
+  themeFromSourceColor as _themeFromSourceColor
 } from '@material/material-color-utilities'
 
 import {
   getContrastingColor,
-  getComplementaryColor as _getComplementaryColor,
+  getComplementaryColor as _getComplementaryColor
 } from './color'
 
 import type {
   TonalPalette,
   Theme,
-  Hct,
+  Hct
 } from '@material/material-color-utilities'
 
 import type { Color } from '@/types/palette'
 
 export const HUE_TONES = [
-  0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100,
+  0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100
 ]
 
 /**
@@ -47,7 +47,7 @@ export function tonesOfPalette(tonalPalette: TonalPalette): Color[] {
     tones.push({
       weight: tone,
       value: hexFromArgb(hct.toInt()),
-      on: getContrastingColor(hct.internalTone),
+      on: getContrastingColor(hct.internalTone)
     })
   }
 

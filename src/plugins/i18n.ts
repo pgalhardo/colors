@@ -5,23 +5,23 @@ import { en, pt } from 'vuetify/locale'
 const messages = {
   en: {
     $vuetify: {
-      ...en,
+      ...en
     },
-    ...(await import('../locales/en.json')).default,
+    ...(await import('../locales/en.json')).default
   },
   pt: {
     $vuetify: {
-      ...pt,
+      ...pt
     },
-    ...(await import('../locales/pt.json')).default,
-  },
+    ...(await import('../locales/pt.json')).default
+  }
 }
 
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
   fallbackLocale: 'en',
-  messages,
+  messages
 })
 
 const i18nAdapter = createVueI18nAdapter({ i18n, useI18n })

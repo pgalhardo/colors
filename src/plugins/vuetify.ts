@@ -29,8 +29,8 @@ const vuetify = createVuetify({
           onSecondary: '#000000', // Black text on secondary color
           onBackground: '#000000', // Black text on light background
           onSurface: '#000000', // Black text on surface
-          onError: '#FFFFFF', // White text on error messages
-        },
+          onError: '#FFFFFF' // White text on error messages
+        }
       },
       dark: {
         dark: true,
@@ -48,14 +48,14 @@ const vuetify = createVuetify({
           onSecondary: '#FFFFFF', // White text on light secondary
           onBackground: '#FFFFFF', // White text on black background
           onSurface: '#FFFFFF', // White text on dark surface
-          onError: '#000000', // Black text on error messages
-        },
-      },
-    },
+          onError: '#000000' // Black text on error messages
+        }
+      }
+    }
   },
   locale: {
-    adapter: i18nAdapter,
-  },
+    adapter: i18nAdapter
+  }
 })
 
 export default vuetify

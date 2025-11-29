@@ -125,7 +125,7 @@ function rgbToHsl(rgb: RGB): HSL {
   return {
     h: Math.round(h * 360),
     s: Math.round(s * 100),
-    l: Math.round(l * 100),
+    l: Math.round(l * 100)
   }
 }
 
@@ -157,7 +157,7 @@ function hslToRgb(hsl: HSL): RGB {
   return {
     r: Math.round(r * 255),
     g: Math.round(g * 255),
-    b: Math.round(b * 255),
+    b: Math.round(b * 255)
   }
 }
 
@@ -209,14 +209,14 @@ export function generateRange(potentialColor: string) {
       shades.push({
         weight: shade,
         value: potentialColor,
-        on: getContrastingColor(hsl.l),
+        on: getContrastingColor(hsl.l)
       })
     else {
       const luminance = (1000 - shade) / 10
       shades.push({
         weight: shade,
         value: colorToHex(hslToRgb({ h: hsl.h, s: hsl.s, l: luminance })),
-        on: getContrastingColor(luminance),
+        on: getContrastingColor(luminance)
       })
     }
   }
@@ -243,6 +243,6 @@ export function getComplementaryColor(color: string): Color {
   // Convert the r, g, b values back to a hex string and return it
   return {
     value: colorToHex(rgb),
-    on: getContrastingColor(hsl.l),
+    on: getContrastingColor(hsl.l)
   }
 }

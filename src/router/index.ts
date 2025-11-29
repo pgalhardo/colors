@@ -9,12 +9,12 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import('@/views/Workspace.vue'),
+    component: () => import('@/views/Workspace.vue')
   },
   {
     path: '/:catchAll(.*)', // Catch-all route for handling undefined paths
-    component: () => import('@/views/NotFound.vue'),
-  },
+    component: () => import('@/views/NotFound.vue')
+  }
 ]
 
 /**
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
  */
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes
 })
 
 export default router

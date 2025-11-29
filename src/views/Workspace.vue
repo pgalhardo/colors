@@ -11,7 +11,7 @@ import { isValidColor } from '@/utils'
 import {
   getComplementaryColor,
   themeFromSourceColor,
-  tonesOfPalette,
+  tonesOfPalette
 } from '@/utils/hct'
 import { computed, ref, useTemplateRef } from 'vue'
 
@@ -23,7 +23,7 @@ const suggestions = computed(() => [
   { name: t('theme.azureCascade'), value: '#018BD2' },
   { name: t('theme.mochaMist'), value: '#A98F76' },
   { name: t('theme.sereneOlive'), value: '#889D62' },
-  { name: t('theme.coralBlush'), value: '#DC9E82' },
+  { name: t('theme.coralBlush'), value: '#DC9E82' }
 ])
 
 const primaryColor = ref<string>('')
@@ -60,7 +60,7 @@ function generatePalette(primaryColor: string) {
 
     palettes.value.push({
       name: palette,
-      tones: tones,
+      tones: tones
     })
   }
 
@@ -71,7 +71,7 @@ function generatePalette(primaryColor: string) {
 const rules = {
   required: (value: string) => !!value || t('validation.required'),
   valid: (value: string) =>
-    !!isValidColor(value) || t('validation.invalidColor'),
+    !!isValidColor(value) || t('validation.invalidColor')
 }
 </script>
 

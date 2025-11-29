@@ -20,7 +20,7 @@ interface State {
 export const useAppStore = defineStore('app', {
   state: (): State => ({
     theme: 'light', // Default theme
-    locale: 'en', // Default locale
+    locale: 'en' // Default locale
   }),
 
   // Enable persistence for the store state
@@ -40,6 +40,6 @@ export const useAppStore = defineStore('app', {
      */
     setLocale(newLocale: string) {
       this.locale = newLocale
-    },
-  },
+    }
+  }
 })

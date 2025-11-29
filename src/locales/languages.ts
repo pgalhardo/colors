@@ -1,6 +1,6 @@
 const languages = [
   { code: 'en', name: 'English' },
-  { code: 'pt', name: 'Português' },
+  { code: 'pt', name: 'Português' }
 ]
 
 /**
