@@ -1,8 +1,5 @@
-/**
- * plugins/vuetify.ts
- *
- * Framework documentation: https://vuetifyjs.com`
- */
+// Plugins
+import { i18nAdapter } from './i18n'
 
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
@@ -55,6 +52,9 @@ const vuetify = createVuetify({
         },
       },
     },
+  },
+  locale: {
+    adapter: i18nAdapter,
   },
 })
 
